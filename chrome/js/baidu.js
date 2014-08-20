@@ -376,14 +376,15 @@ var baidu = function(cookies) {
                     var length = file_list.length;
                     console.log(length);
                     for (var i = 0; i < length; i++) {
-                        files.push("aria2c -c -s10 -x10 -o " + JSON.stringify(file_list[i].name) + combination.header(cookies,'aria2c_line') + " " + JSON.stringify(file_list[i].link) + "\n");
+                        files.push("aria2c -c -s16 -x16 -k1M -o " + JSON.stringify(file_list[i].name) + combination.header(cookies,'aria2c_line') + " " + JSON.stringify(file_list[i].link) + "\n");
                         aria2c_txt.push([
                             file_list[i].link,
                             combination.header(cookies,"aria2c_txt"),
                             ' out=' + file_list[i].name,
                             ' continue=true',
-                            ' max-connection-per-server=10',
-                            '  split=10',
+                            ' max-connection-per-server=16',
+                            '  split=16',
+                            ' min-split-size=1M'
                             '\n'
                         ].join('\n'));
                         idm_txt.push([
