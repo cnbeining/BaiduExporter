@@ -384,7 +384,7 @@ var baidu = function(cookies) {
                             ' continue=true',
                             ' max-connection-per-server=16',
                             '  split=16',
-                            ' min-split-size=1M'
+                            ' min-split-size=1M',
                             '\n'
                         ].join('\n'));
                         idm_txt.push([
